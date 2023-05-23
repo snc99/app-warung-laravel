@@ -144,13 +144,13 @@
                 success: function(response) {
                         // console.log(response)
                     if (response.errors) {
-                        // $('.alert-danger').removeClass('d-none');
-                        // $('.alert-danger').html("<ul>");
-                        // $.each(response.errors, function(key, value) {
-                        // $('.alert-danger').find('ul').append("<li>" + value +
-                        // "</li>");
-                        // });
-                        // $('.alert-danger').append("</ul>");
+                            $('.alert-danger').removeClass('d-none');
+                            $('.alert-danger').html("<ul>");
+                            $.each(response.errors, function(key, value) {
+                            $('.alert-danger').find('ul').append("<li>" + value +
+                            "</li>");
+                            });
+                            $('.alert-danger').append("</ul>");
                     } else {
                         $('.alert-success').removeClass('d-none');
                         $('.alert-success').html(response.success);

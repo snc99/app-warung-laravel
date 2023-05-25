@@ -10,7 +10,7 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="{{ url('/') }}/assets//img/logo.png" alt="">
-                <span>FlexStart</span>
+                <span>App Warung</span>
             </a>
 
             <nav id="navbar" class="navbar">
@@ -151,10 +151,11 @@
                     </div>
                     <div class="mb-3">
                         <label id="recipient-name" class="col-form-label">Tanggal :</label>
-                        <input type="text" class="form-control" id="tanggal">
+                        <input type="text" class="form-control" id="tanggal" readonly>
                     </div>
-                    <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Total Transaksi :</label>
+                    <label for="exampleFormControlInput1" class="form-label">Bayar</label><br>
+                        <div class="input-group mb-3">
+                        <span class="input-group-text">Rp.</span>
                         <input type="text" class="form-control" id="total_transaksi">
                     </div>
                 </form>
@@ -184,23 +185,25 @@
                 <div class="alert alert-success d-none"></div>
                 <form>
                     <div class="mb-3">
-                        <label id="exampleFormControlInput1" class="form-label">address</label>
-                        <select class="nama1" id="nama1" name="state">
+                        <label for="nama1" class="col-form-label">Nama</label>
+                        <select class="form-control form-select-solid" id="nama1" name="state" data-placeholder="Pilih Nama">
+                            <option>Pilih Nama</option>
                             <option value="AL">Alabama</option>
-                            
+                            <option value="ID">Indonesia</option>
+                            <option value="AD">Adam</option>
                             <option value="WY">Wyoming</option>
                         </select>  
                     </div>
                     <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Total Transaksi :</label>
+                        <label for="total_tagihan" class="col-form-label">Total Transaksi :</label>
                         <input type="text" class="form-control" id="total_tagihan">
                     </div>
                     <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Bayar :</label>
+                        <label for="bayar" class="col-form-label">Bayar :</label>
                         <input type="text" class="form-control" id="bayar">
                     </div>
                     <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Sisa :</label>
+                        <label for="sisa_tagihan" class="col-form-label">Sisa :</label>
                         <input type="text" class="form-control" id="sisa_tagihan">
                     </div>
                 </form>
@@ -218,7 +221,6 @@
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
             <header class="section-header">
-                <h2>Contact</h2>
                 <p>Contact Us</p>
             </header>
             <section id="counts" class="counts">
@@ -228,8 +230,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-geo-alt"></i>
-                                    <h3>Address</h3>
-                                    <p>A108 Adam Street,<br>New York, NY 535022</p>
+                                    <h3>Alamat</h3>
+                                    <p>Jalan Sagong,<br>Mustika Jaya, Bekasi</p>
                                 </div>
                             </div>
                         </div>
@@ -237,8 +239,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-telephone"></i>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                                    <h3>Telepon</h3>
+                                    <p>0882-1205-3377<br>0851-1256-3772</p>
                                 </div>
                             </div>
                         </div>
@@ -246,8 +248,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-clock"></i>
-                                    <h3>Open Hours</h3>
-                                    <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                                    <h3>Jam Oprasional</h3>
+                                    <p>Senin - Sabtu<br>08:00AM - 06:00PM</p>
                                 </div>
                             </div>
                         </div>

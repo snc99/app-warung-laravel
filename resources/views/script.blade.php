@@ -1,12 +1,26 @@
 {{-- <script>
-    $(document).ready(function(){
-        $("#nama1").select2();
+    $(function() {
+        $('#nama1').select2({
+            dropdownParent: $('#modalTagihan')
+        });
     });
 </script> --}}
 
 
+{{-- Jquery datepicker --}}
+<script>
+    $(function() {
+        $( "#tanggal" ).datepicker({
+        showAnim: "slideDown",
+        dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
+
+
+
 {{-- Ajax Tagihan --}}
-{{-- <script>
+<script>
     $(document).ready(function() {
         $('#tagihan').DataTable({
             processing: true,
@@ -79,6 +93,8 @@
         });
     });
 
+    
+
     // validasi tagihan
     $('#modalTagihan').on('hidden.bs.modal', function() {
         $('#nama').val('');
@@ -91,8 +107,9 @@
 
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
+
     })
-</script> --}}
+</script>
 
 
 {{-- Ajax Pencatatan --}}
@@ -173,5 +190,7 @@
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
     });
+
+    
 </script>
 

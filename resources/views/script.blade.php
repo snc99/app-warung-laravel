@@ -6,6 +6,8 @@
     });
 </script> --}}
 
+{{-- Select2 belum di fix --}}
+
 
 {{-- Jquery datepicker --}}
 <script>

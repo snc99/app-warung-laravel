@@ -10,7 +10,7 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="{{ url('/') }}/assets/img/logo.png" alt="">
-                <span>FlexStart</span>
+                <span>App Warung</span>
             </a>
 
             <nav id="navbar" class="navbar">

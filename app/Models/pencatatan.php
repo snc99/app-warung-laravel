@@ -17,6 +17,4 @@ class pencatatan extends Model
     {
         return $this->hasOne(TotalTagihan::class, 'nama', 'nama');
     }
-}
-
-// test branch
+};

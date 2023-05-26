@@ -34,6 +34,12 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('/') }}/assets/css/style.css" rel="stylesheet">
     <link href="{{ url('/') }}/assets/vendor/tables/custom/style.css" rel="stylesheet">
+    
+    <link href="{{ url('/') }}/assets/vendor/select2/select2.min.css" rel="stylesheet">
+
+
+    {{-- css select2 --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
 
 
 
@@ -44,9 +50,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
 crossorigin="anonymous"></script>
 
-{{-- css select2 --}}
 
-</head>
+
 
 
 <!-- link css jquery -->
@@ -54,7 +59,9 @@ crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 
 
 </head>

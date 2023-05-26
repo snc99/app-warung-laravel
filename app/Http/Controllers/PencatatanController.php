@@ -63,7 +63,7 @@ class PencatatanController extends Controller
                 'tanggal' => $request->tanggal,
                 'total_transaksi' => $request->total_transaksi
             ];
-            pencatatan::saveData($data);
+            pencatatan::create($data);
             return response()->json(['success' => 'Berhasil menyimpan data']);
         }
     }

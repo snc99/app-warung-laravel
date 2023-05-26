@@ -1,12 +1,28 @@
 {{-- <script>
-    $(document).ready(function(){
-        $("#nama1").select2();
+    $(function() {
+        $('#nama1').select2({
+            dropdownParent: $('#modalTagihan')
+        });
     });
 </script> --}}
 
+{{-- Select2 belum di fix --}}
+
+
+{{-- Jquery datepicker --}}
+<script>
+    $(function() {
+        $( "#tanggal" ).datepicker({
+        showAnim: "slideDown",
+        dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
+
+
 
 {{-- Ajax Tagihan --}}
-{{-- <script>
+<script>
     $(document).ready(function() {
         $('#tagihan').DataTable({
             processing: true,
@@ -79,6 +95,8 @@
         });
     });
 
+    
+
     // validasi tagihan
     $('#modalTagihan').on('hidden.bs.modal', function() {
         $('#nama').val('');
@@ -91,8 +109,9 @@
 
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
+
     })
-</script> --}}
+</script>
 
 
 {{-- Ajax Pencatatan --}}
@@ -144,13 +163,13 @@
                 success: function(response) {
                         // console.log(response)
                     if (response.errors) {
-                        // $('.alert-danger').removeClass('d-none');
-                        // $('.alert-danger').html("<ul>");
-                        // $.each(response.errors, function(key, value) {
-                        // $('.alert-danger').find('ul').append("<li>" + value +
-                        // "</li>");
-                        // });
-                        // $('.alert-danger').append("</ul>");
+                            $('.alert-danger').removeClass('d-none');
+                            $('.alert-danger').html("<ul>");
+                            $.each(response.errors, function(key, value) {
+                            $('.alert-danger').find('ul').append("<li>" + value +
+                            "</li>");
+                            });
+                            $('.alert-danger').append("</ul>");
                     } else {
                         $('.alert-success').removeClass('d-none');
                         $('.alert-success').html(response.success);
@@ -173,5 +192,7 @@
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
     });
+
+    
 </script>
 

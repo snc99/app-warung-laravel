@@ -47,7 +47,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
+ 
 
 </head>
 
@@ -123,10 +125,11 @@
                                 </header>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">address</label>
-                                    <select class="nama" id="nama" name="state">
+                                    <select class="form-control" id="nama" name="state">
                                         <option value="AL">Alabama</option>
-                                        
                                         <option value="WY">Wyoming</option>
+                                        <option value="WY">arman</option>
+                                        <option value="WY">reza</option>
                                     </select>                                
                                 </div>
                                 <div class="mb-3">
@@ -137,13 +140,55 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
-                                </div>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Tekan
+                                  </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">address</label>
+                <select class="form-control" id="nama" name="state">
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="WY">arman</option>
+                    <option value="WY">reza</option>
+                </select>                                
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
@@ -218,7 +263,7 @@
     {{-- script tabel  --}}
     <script src="{{ url('/') }}/assets/vendor/tables/custom/script.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script> --}}
     
 
 
@@ -238,9 +283,27 @@
             $('#myTable').DataTable();
         });
     </script> --}}
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+
+    </script>
+
+    <script>
+      $(function() {
+        $( "#datepicker" ).datepicker();
+      });
+      </script>
+
     <script>
         $(document).ready(function() {
-                $('#nama').select2();
+                $('#nama').select2(
+    //            {
+    //              dropdownParent: $('#myModal')
+    //            }
+    );
             });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

@@ -37,11 +37,13 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
 
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form action="{{ url('login/proses') }}" class="login100-form validate-form" method="post">
+                <form action="/sesi/login" class="login100-form validate-form" method="post">
                     @csrf
                     <span class="login100-form-title p-b-26">
                         Welcome
@@ -49,13 +51,14 @@
                     <span class="login100-form-title p-b-48">
                         <i class="zmdi zmdi-font"></i>
                     </span>
-
-                    <div class="wrap-input100 validate-input" data-validate="Isi email yang sesuai : nama@wr.com">
+                    @include('component/pesan')
+                    <div class="wrap-input100">
                         <input class="input100" type="text" name="email">
+                        {{-- value="{{ Session::get('email') }}" ==> jika ingin menggunakan flash massage --}}
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Masukan Password">
+                    <div class="wrap-input100 ">
                         <span class="btn-show-pass">
                             <i class="zmdi zmdi-eye"></i>
                         </span>

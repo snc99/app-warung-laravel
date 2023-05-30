@@ -63,6 +63,9 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'CekUserLogin' => \app\Http\Middleware\CekUserLogin::class,
+        'IsLogin' => \App\Http\Middleware\IsLogin::class,
+        'IsTamu' => \App\Http\Middleware\IsTamu::class,
+        \RealRashid\SweetAlert\ToSweetAlert::class
+
     ];
 }

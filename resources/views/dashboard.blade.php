@@ -3,22 +3,23 @@
 @show
 
 <body>
+    @include('sweetalert::alert')
+
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
             <a href="index.html" class="logo d-flex align-items-center">
+                @include('component/pesan')
                 <img src="{{ url('/') }}/assets//img/logo.png" alt="">
                 <span>App Warung</span>
             </a>
-
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#counts">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tabel Transaksi</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="logout">Logout</a></li>
+                    <li><a class="getstarted scrollto" href="/sesi/logout">Logout</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -121,101 +122,104 @@
         </div>
     </section>
 
-<section>
-{{-- ===== Modal Pop-Up Pencatatan ===== --}}
-<div class="modal fade" id="modalPencatatan" tabindex="-1" aria-labelledby="modalPencatatanLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalPencatatanLabel">Isi Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-danger d-none"></div>
-                <div class="alert alert-success d-none"></div>
-                <form>
-                    @csrf
-                    <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Nama :</label>
-                        <input type="text"
-                            class="form-control @error('nama')
+    <section>
+        {{-- ===== Modal Pop-Up Pencatatan ===== --}}
+        <div class="modal fade" id="modalPencatatan" tabindex="-1" aria-labelledby="modalPencatatanLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalPencatatanLabel">Isi Data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger d-none"></div>
+                        <div class="alert alert-success d-none"></div>
+                        <form>
+                            @csrf
+                            <div class="mb-3">
+                                <label id="recipient-name" class="col-form-label">Nama :</label>
+                                <input type="text"
+                                    class="form-control @error('nama')
                             is-invalid
                         @enderror"
-                            id="nama">
-                        @error('nama')
-                            <div class="invalid-feedback">
-                                {{ $message }}
+                                    id="nama">
+                                @error('nama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
+                            <div class="mb-3">
+                                <label id="recipient-name" class="col-form-label">Tanggal :</label>
+                                <input type="text" class="form-control" id="tanggal" readonly>
+                            </div>
+                            <label for="exampleFormControlInput1" class="form-label">Bayar</label><br>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Rp.</span>
+                                <input type="text" class="form-control" id="total_transaksi">
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label id="recipient-name" class="col-form-label">Tanggal :</label>
-                        <input type="text" class="form-control" id="tanggal" readonly>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary tombol-simpan btn-sm">Simpan</button>
                     </div>
-                    <label for="exampleFormControlInput1" class="form-label">Bayar</label><br>
-                        <div class="input-group mb-3">
-                        <span class="input-group-text">Rp.</span>
-                        <input type="text" class="form-control" id="total_transaksi">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary tombol-simpan btn-sm">Simpan</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-{{-- ===== Ahir Modal Pop-Up ===== --}}
-</section>
+        {{-- ===== Ahir Modal Pop-Up ===== --}}
+    </section>
 
-{{-- ===== Modal Pop-Up Tagihan ===== --}}
-<section>
-<div class="modal fade" id="modalTagihan" tabindex="-1" aria-labelledby="modalTagihanLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTagihanLabel">Isi data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-danger d-none"></div>
-                <div class="alert alert-success d-none"></div>
-                <form>
-                    <div class="mb-3">
-                        <label for="nama1" class="col-form-label">Nama</label>
-                        <select class="form-control form-select-solid" id="nama1" name="state" data-placeholder="Pilih Nama">
-                            <option>Pilih Nama</option>
-                            <option value="AL">Alabama</option>
-                            <option value="ID">Indonesia</option>
-                            <option value="AD">Adam</option>
-                            <option value="WY">Wyoming</option>
-                        </select>  
+    {{-- ===== Modal Pop-Up Tagihan ===== --}}
+    <section>
+        <div class="modal fade" id="modalTagihan" tabindex="-1" aria-labelledby="modalTagihanLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTagihanLabel">Isi data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="total_tagihan" class="col-form-label">Total Transaksi :</label>
-                        <input type="text" class="form-control" id="total_tagihan">
+                    <div class="modal-body">
+                        <div class="alert alert-danger d-none"></div>
+                        <div class="alert alert-success d-none"></div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nama1" class="col-form-label">Nama</label>
+                                <select class="form-control form-select-solid" id="nama1" name="state"
+                                    data-placeholder="Pilih Nama">
+                                    <option>Pilih Nama</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="ID">Indonesia</option>
+                                    <option value="AD">Adam</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="total_tagihan" class="col-form-label">Total Transaksi :</label>
+                                <input type="text" class="form-control" id="total_tagihan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="bayar" class="col-form-label">Bayar :</label>
+                                <input type="text" class="form-control" id="bayar">
+                            </div>
+                            <div class="mb-3">
+                                <label for="sisa_tagihan" class="col-form-label">Sisa :</label>
+                                <input type="text" class="form-control" id="sisa_tagihan">
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="bayar" class="col-form-label">Bayar :</label>
-                        <input type="text" class="form-control" id="bayar">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary tombol-simpanTagihan">Simpan</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="sisa_tagihan" class="col-form-label">Sisa :</label>
-                        <input type="text" class="form-control" id="sisa_tagihan">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary tombol-simpanTagihan">Simpan</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

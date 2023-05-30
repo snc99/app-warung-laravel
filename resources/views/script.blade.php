@@ -12,9 +12,9 @@
 {{-- Jquery datepicker --}}
 <script>
     $(function() {
-        $( "#tanggal" ).datepicker({
-        showAnim: "slideDown",
-        dateFormat: "yy-mm-dd"
+        $("#tanggal").datepicker({
+            showAnim: "slideDown",
+            dateFormat: "yy-mm-dd"
         });
     });
 </script>
@@ -29,28 +29,29 @@
             serverside: true,
             ajax: "{{ url('TotalTagihan') }}",
             columns: [
-            //     {
-            //     data: 'DT_RowIndex',
-            //     name: 'DT_RowIndex',
-            //     orderable: false,
-            //     searchable: false
-            // }, 
-            {
-                data: 'nama',
-                name: 'Nama'
-            }, {
-                data: 'total_tagihan',
-                name: 'Total Tagihan'
-            }, {
-                data: 'bayar',
-                name: 'Bayar'
-            }, {
-                data: 'sisa_tagihan',
-                name: 'Sisa Tagihan'
-            }, {
-                data: 'aksi',
-                name: 'Aksi'
-            }]
+                //     {
+                //     data: 'DT_RowIndex',
+                //     name: 'DT_RowIndex',
+                //     orderable: false,
+                //     searchable: false
+                // }, 
+                {
+                    data: 'nama',
+                    name: 'Nama'
+                }, {
+                    data: 'total_tagihan',
+                    name: 'Total Tagihan'
+                }, {
+                    data: 'bayar',
+                    name: 'Bayar'
+                }, {
+                    data: 'sisa_tagihan',
+                    name: 'Sisa Tagihan'
+                }, {
+                    data: 'aksi',
+                    name: 'Aksi'
+                }
+            ]
         });
     });
 
@@ -78,13 +79,13 @@
                 },
                 success: function(response) {
                     if (response.errors) {
-                        // $('.alert-danger').removeClass('d-none');
-                        // $('.alert-danger').html("<ul>");
-                        // $.each(response.errors, function(key, value) {
-                        // $('.alert-danger').find('ul').append("<li>" + value +
-                        // "</li>");
-                        // });
-                        // $('.alert-danger').append("</ul>");
+                        $('.alert-danger').removeClass('d-none');
+                        $('.alert-danger').html("<ul>");
+                        $.each(response.errors, function(key, value) {
+                            $('.alert-danger').find('ul').append("<li>" + value +
+                                "</li>");
+                        });
+                        $('.alert-danger').append("</ul>");
                     } else {
                         $('.alert-success').removeClass('d-none');
                         $('.alert-success').html(response.success);
@@ -95,7 +96,7 @@
         });
     });
 
-    
+
 
     // validasi tagihan
     $('#modalTagihan').on('hidden.bs.modal', function() {
@@ -104,8 +105,8 @@
         $('#bayar').val('');
         $('#sisa_tagihan').val('');
 
-        // $('.alert-danger').addClass('d-none');
-        // $('.alert-danger').html('');
+        $('.alert-danger').addClass('d-none');
+        $('.alert-danger').html('');
 
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
@@ -130,10 +131,10 @@
             }, {
                 data: 'total_transaksi',
                 name: 'Total Transaksi'
-            },{
+            }, {
                 data: 'aksi',
                 name: 'Aksi'
-            } ]
+            }]
         });
     });
 
@@ -161,15 +162,15 @@
                     total_transaksi: $('#total_transaksi').val()
                 },
                 success: function(response) {
-                        // console.log(response)
+                    // console.log(response)
                     if (response.errors) {
-                            $('.alert-danger').removeClass('d-none');
-                            $('.alert-danger').html("<ul>");
-                            $.each(response.errors, function(key, value) {
+                        $('.alert-danger').removeClass('d-none');
+                        $('.alert-danger').html("<ul>");
+                        $.each(response.errors, function(key, value) {
                             $('.alert-danger').find('ul').append("<li>" + value +
-                            "</li>");
-                            });
-                            $('.alert-danger').append("</ul>");
+                                "</li>");
+                        });
+                        $('.alert-danger').append("</ul>");
                     } else {
                         $('.alert-success').removeClass('d-none');
                         $('.alert-success').html(response.success);
@@ -192,7 +193,4 @@
         $('.alert-success').addClass('d-none');
         $('.alert-success').html('');
     });
-
-    
 </script>
-

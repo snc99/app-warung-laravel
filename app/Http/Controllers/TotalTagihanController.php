@@ -19,7 +19,7 @@ class TotalTagihanController extends Controller
         $data = totalTagihan::orderBy('nama', 'asc');
         return DataTables::of($data)
             ->addColumn('aksi', function ($data) {
-                return view('aksi')->with('data', $data);
+                return view('component.aksi')->with('data', $data);
             })
             ->make(true);
     }

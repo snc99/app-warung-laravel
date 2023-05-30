@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LayoutsController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PencatatanController;
 use App\Http\Controllers\TotalTagihanController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +42,16 @@ Route::get('/test', function () {
 //     return view('login');
 // });
 
-Route::get('/dashboard', [LayoutsController::class, 'index'])->middleware('auth');
 
-Route::controller(LoginController::class)->group(function () {
-    Route::get('login', 'index')->name('login');
-    Route::post('login/proses', 'proses');
-    Route::get('logout', 'logout')->name('logout');
-});
 
-Route::resource('TotalTagihan', TotalTagihanController::class);
-Route::resource('Pencatatan', PencatatanController::class);
+// Metod buat atasi middleware di halaman dasboard
+Route::get('/dashboard', [LayoutsController::class, 'index'])->middleware('IsLogin');
+
+// Metod Tambah data 
+Route::resource('TotalTagihan', TotalTagihanController::class)->middleware('IsLogin');
+Route::resource('Pencatatan', PencatatanController::class)->middleware('IsLogin');
+
+// Metod login
+route::get('/sesi', [SessionController::class, 'index'])->middleware('IsTamu');
+route::get('/sesi/logout', [SessionController::class, 'logout'])->middleware('IsTamu');
+route::post('/sesi/login', [SessionController::class, 'login'])->middleware('IsTamu');

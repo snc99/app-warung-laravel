@@ -21,7 +21,7 @@ class PencatatanController extends Controller
         return DataTables::of($data)
             // ->addIndexColumn()
             ->addColumn('aksi', function ($data) {
-                return view('aksi')->with('data', $data);
+                return view('component.aksi')->with('data', $data);
             })
             ->make(true);
     }

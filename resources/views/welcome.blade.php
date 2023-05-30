@@ -96,8 +96,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-geo-alt"></i>
-                                    <h3>Address</h3>
-                                    <p>A108 Adam Street,<br>New York, NY 535022</p>
+                                    <h3>Alamat</h3>
+                                    <p>Jalan Sagong,<br>Mustika Jaya, Bekasi</p>
                                 </div>
                             </div>
                         </div>
@@ -105,8 +105,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-telephone"></i>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                                    <h3>Telepon</h3>
+                                    <p>0882-1205-3377<br>0851-1256-3772</p>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +114,8 @@
                             <div class="count-box">
                                 <div>
                                     <i class="bi bi-clock"></i>
-                                    <h3>Open Hours</h3>
-                                    <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                                    <h3>Jam Oprasional</h3>
+                                    <p>Senin - Sabtu<br>08:00AM - 06:00PM</p>
                                 </div>
                             </div>
                         </div>

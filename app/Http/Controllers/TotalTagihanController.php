@@ -10,7 +10,6 @@ use Yajra\DataTables\Facades\DataTables;
 class TotalTagihanController extends Controller
 {
     /**
-     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */

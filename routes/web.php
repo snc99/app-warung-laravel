@@ -53,5 +53,5 @@ Route::resource('Pencatatan', PencatatanController::class)->middleware('IsLogin'
 
 // Metod login
 route::get('/sesi', [SessionController::class, 'index'])->middleware('IsTamu');
-route::get('/sesi/logout', [SessionController::class, 'logout'])->middleware('IsTamu');
+route::get('/sesi/logout', [SessionController::class, 'logout']);
 route::post('/sesi/login', [SessionController::class, 'login'])->middleware('IsTamu');

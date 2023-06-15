@@ -18,7 +18,7 @@
                     <li><a class="nav-link scrollto active" href="#counts">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tabel Transaksi</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="login">Login</a></li>
+                    <li><a class="getstarted scrollto" href="/sesi">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

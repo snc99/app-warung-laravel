@@ -1,40 +1,19 @@
-{{-- <script>
-    $(function() {
-        $('#nama1').select2({
-            dropdownParent: $('#modalTagihan')
-        });
-    });
-</script> --}}
-
-{{-- Select2 belum di fix --}}
-
-
-{{-- Jquery datepicker --}}
-<script>
-    $(function() {
-        $("#tanggal").datepicker({
-            showAnim: "slideDown",
-            dateFormat: "yy-mm-dd"
-        });
-    });
-</script>
-
-
-
 {{-- Ajax Tagihan --}}
 <script>
     $(document).ready(function() {
+        $('#nama1').select2({
+            dropdownParent: $('#modalTagihan'),
+        });
         $('#tagihan').DataTable({
             processing: true,
             serverside: true,
             ajax: "{{ url('TotalTagihan') }}",
-            columns: [
-                //     {
-                //     data: 'DT_RowIndex',
-                //     name: 'DT_RowIndex',
-                //     orderable: false,
-                //     searchable: false
-                // }, 
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    orderable: false,
+                    searchable: false
+                },
                 {
                     data: 'nama',
                     name: 'Nama'
@@ -72,12 +51,14 @@
                 url: 'TotalTagihan',
                 type: 'POST',
                 data: {
-                    nama: $('#nama').val(),
+                    nama: $('#nama1 option:selected').text(),
                     total_tagihan: $('#total_tagihan').val(),
                     bayar: $('#bayar').val(),
                     sisa_tagihan: $('#sisa_tagihan').val()
                 },
                 success: function(response) {
+                    // console.log(response)
+
                     if (response.errors) {
                         $('.alert-danger').removeClass('d-none');
                         $('.alert-danger').html("<ul>");
@@ -118,11 +99,20 @@
 {{-- Ajax Pencatatan --}}
 <script>
     $(document).ready(function() {
+        $("#tanggal").datepicker({
+            showAnim: "slideDown",
+            dateFormat: "yy-mm-dd"
+        });
         $('#pencatatan').DataTable({
             processing: true,
             serverside: true,
             ajax: "{{ url('Pencatatan') }}",
             columns: [{
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex',
+                orderable: false,
+                searchable: false
+            }, {
                 data: 'nama',
                 name: 'Nama'
             }, {

@@ -19,7 +19,7 @@ class PencatatanController extends Controller
     {
         $data = pencatatan::orderBy('nama', 'asc');
         return DataTables::of($data)
-            // ->addIndexColumn()
+            ->addIndexColumn()
             ->addColumn('aksi', function ($data) {
                 return view('component.aksi')->with('data', $data);
             })

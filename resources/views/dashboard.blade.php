@@ -55,64 +55,66 @@
     </section>
     <section id="about" class="counts">
         <div class="container mt-4" data-aos="fade-up">
-            <div class="col-lg-12 col-md-12">
-                <div class="container-fluid mt-4">
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <header class="section-header">
-                                <p>Daftar Transaksi</p>
-                                <h2>Data Total Transaksi Pelanggan</h2>
-                            </header>
-                            <div class="table-responsive">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                            data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                            aria-selected="true">Pencatatan</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                            data-bs-target="#profile" type="button" role="tab"
-                                            aria-controls="profile" aria-selected="false">Bayar</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="table-responsive">
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                        aria-labelledby="home-tab">
-                                        <div class="btn btn-primary mb-4 mt-4 tambah-pencatatan btn-sm" type="submit">
-                                            Tambah
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="container-fluid mt-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <header class="section-header">
+                                    <p>Daftar Transaksi</p>
+                                    <h2>Data Total Transaksi Pelanggan</h2>
+                                </header>
+                                <div class="table-responsive">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                                data-bs-target="#home" type="button" role="tab"
+                                                aria-controls="home" aria-selected="true">Pencatatan</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                data-bs-target="#profile" type="button" role="tab"
+                                                aria-controls="profile" aria-selected="false">Bayar</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                            aria-labelledby="home-tab">
+                                            <div class="btn btn-primary mb-4 mt-4 tambah-pencatatan btn-sm"
+                                                type="submit">
+                                                Tambah
+                                            </div>
+                                            <table class="table table-hover table-striped" id="pencatatan">
+                                                <thead class="header">
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Nama</th>
+                                                        <th>Tanggal Transaksi</th>
+                                                        <th>Total</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
                                         </div>
-                                        <table class="uk-table uk-table-hover uk-table-striped" id="pencatatan">
-                                            <thead class="header">
-                                                <tr>
-                                                    {{-- <th>No</th> --}}
-                                                    <th>Nama</th>
-                                                    <th>Tanggal Transaksi</th>
-                                                    <th>Total</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
+                                        <div class="tab-pane fade mt-4" id="profile" role="tabpanel"
+                                            aria-labelledby="profile-tab">
+                                            <div class="btn btn-primary mb-4 mt-4 tambah-bayar btn-sm" type="submit">
+                                                Tambah
+                                            </div>
+                                            <table class="table table-hover table-striped" id="tagihan">
+                                                <thead class="header">
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Nama</th>
+                                                        <th>Total Transaksi</th>
+                                                        <th>Bayar</th>
+                                                        <th>Sisa</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane fade mt-4" id="profile" role="tabpanel"
-                                    aria-labelledby="profile-tab">
-                                    <div class="btn btn-primary mb-4 mt-4 tambah-bayar btn-sm" type="submit">
-                                        Tambah
-                                    </div>
-                                    <table class="uk-table uk-table-hover uk-table-striped" id="tagihan">
-                                        <thead class="header">
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Total Transaksi</th>
-                                                <th>Bayar</th>
-                                                <th>Sisa</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -121,6 +123,7 @@
             </div>
         </div>
     </section>
+
 
     <section>
         {{-- ===== Modal Pop-Up Pencatatan ===== --}}
@@ -188,14 +191,13 @@
                         <div class="alert alert-success d-none"></div>
                         <form>
                             <div class="mb-3">
-                                <label for="nama1" class="col-form-label">Nama</label>
-                                <select class="form-control form-select-solid" id="nama1" name="state"
+                                <label for="nama1" class="col-form-label">Nama </label>
+                                <select style="width: 467px" class="nama1" id="nama1" name="state"
                                     data-placeholder="Pilih Nama">
-                                    <option>Pilih Nama</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="ID">Indonesia</option>
-                                    <option value="AD">Adam</option>
-                                    <option value="WY">Wyoming</option>
+                                    <option value="">Pilih Nama</option>
+                                    @foreach (\App\Models\TotalTagihan::getPilihanNama() as $id => $nama)
+                                        <option value="{{ $id }}">{{ $nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">

@@ -2,19 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\TotalTagihan;
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pencatatan extends Model
+class Pencatatan extends Model
 {
     use HasFactory;
 
-
-    public $table = "pencatatan";
+    protected $table = 'pencatatan';
     protected $fillable = ['id', 'nama', 'tanggal', 'total_transaksi'];
 
+
+    // Definisikan relasi dengan model totalTagihan
     public function totalTagihan()
     {
         return $this->hasOne(TotalTagihan::class, 'nama', 'nama');
     }
-};
+}
